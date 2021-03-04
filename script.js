@@ -11,7 +11,6 @@ function print(){
 }
 print();
 function setGradient(){
-	try{
 		body.style.background = 
 		"linear-gradient(to right, " 
 		+ color1.value 
@@ -19,23 +18,18 @@ function setGradient(){
 		+ color2.value 
 		+ " )";
 		print();
-	} catch(error) {
-		color1.value = #FFFFFF;
-		color2.value = #000000;
-		body.style.background = 
-		"linear-gradient(to right, " 
-		+ color1.value 
-		+ ", " 
-		+ color2.value 
-		+ " )";
-		print();
-	}
-	
 }
 btn.onclick=function randomColour() {
-	color1.value = "#" + Math.floor(Math.random()*16777215).toString(16);
-	color2.value = "#" + Math.floor(Math.random()*16777215).toString(16);
-	setGradient();
+	try{
+		color1.value = "#" + Math.floor(Math.random()*16777215).toString(16);
+		color2.value = "#" + Math.floor(Math.random()*16777215).toString(16);
+		setGradient();
+	} catch(error) {
+		color1.value = #ffffff;
+		color2.value = #000000;
+		setGradient();
+	}
+	
 }
 
 
