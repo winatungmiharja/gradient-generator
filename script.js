@@ -11,13 +11,26 @@ function print(){
 }
 print();
 function setGradient(){
-	body.style.background = 
-	"linear-gradient(to right, " 
-	+ color1.value 
-	+ ", " 
-	+ color2.value 
-	+ " )";
-	print();
+	try{
+		body.style.background = 
+		"linear-gradient(to right, " 
+		+ color1.value 
+		+ ", " 
+		+ color2.value 
+		+ " )";
+		print();
+	} catch(error) {
+		color1.value = #FFFFFF;
+		color2.value = #000000;
+		body.style.background = 
+		"linear-gradient(to right, " 
+		+ color1.value 
+		+ ", " 
+		+ color2.value 
+		+ " )";
+		print();
+	}
+	
 }
 btn.onclick=function randomColour() {
 	color1.value = "#" + Math.floor(Math.random()*16777215).toString(16);
